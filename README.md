@@ -1,8 +1,5 @@
 # TodoApp
 
-Todo:
-- Mongoose ORM
-- Docker running at cloud environment
 ## Usage
 
 Install [nodemon](https://github.com/remy/nodemon) globally
