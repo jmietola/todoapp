@@ -22,7 +22,7 @@ var TodoModel = require('./../models/todo');
       .post(function(req, res) {
 
         // Create an instance of model SomeModel
-        var awesome_instance = new TodoModel({ name: 'awesome' });
+        var awesome_instance = new TodoModel({ name: 'Mongoose ORM' });
 
         // Save the new model instance, passing a callback
         awesome_instance.save(function (err) {

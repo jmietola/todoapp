@@ -42,16 +42,7 @@ var db = mongoose.connection;
 
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-var TodoModel = require('./models/todo');
 
-// Create an instance of model SomeModel
-var awesome_instance = new TodoModel({ name: 'awesome' });
-
-// Save the new model instance, passing a callback
-awesome_instance.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
-});
 
 var bodyParser = require('body-parser');
 

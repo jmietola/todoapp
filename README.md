@@ -11,6 +11,12 @@ Install [nodemon](https://github.com/remy/nodemon) globally
 npm i nodemon -g
 ```
 
+Add secret.js to add password for mongoose. Simply add in secret. Password can be asked jouni.mietola@gmail.com for current mlab environment
+
+```
+module.exports = "password"
+```
+
 Install server and client dependencies
 
 ```
@@ -40,5 +46,7 @@ Swagger Documentation can be seen
 ```
 "proxy": "http://localhost:5000/api-docs/#/default/findtodos"
 ```
+
+
 
 -J.M
