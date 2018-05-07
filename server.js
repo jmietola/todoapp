@@ -6,6 +6,8 @@ const port = process.env.PORT || 5000;
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
+
+
 // Add headers
 app.use(function (req, res, next) {
 
@@ -67,42 +69,6 @@ router.use(function(req, res, next) {
     next();
 });
 
-router.route('/todos')
-
-    //TODO Get all todos from database
-    .get(function(req, res) {
-    res.json({ message:  [
-        {
-      		"todo": "Mongoose ORM"
-      	}, {
-      		"todo": "Move logic from server to separate files"
-      	}
-      ] });
-    })
-
-
-    //TODO Creating todo
-    .post(function(req, res) {
-    res.json({ message: 'Todo Created' });
-  });
-
-
-router.route('/todos/:id')
-
-    //TODO Updating todo
-    .put((req, res) => {
-      console.log(req.params.id);
-      res.send({ });
-    })
-
-    //TODO Delete todo
-    .delete((req, res) => {
-      console.log(req.params.id);
-      res.send({ });
-    });
-
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', router);
+app.use(require('./controllers'))
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
