@@ -3,6 +3,7 @@
 Todo:
 - Mongoose ORM
 - Move logic from server to separate files
+- Using docker running at cloud environment
 ## Usage
 
 Install [nodemon](https://github.com/remy/nodemon) globally
