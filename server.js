@@ -29,19 +29,29 @@ app.use(function (req, res, next) {
 });
 
 
+//Import the mongoose module
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/todo');
-
+var password = require('./secret');
+//Set up default mongoose connection
+var mongoDB = `mongodb://jmietola:${password}@ds016128.mlab.com:16128/todo`;
+mongoose.connect(mongoDB);
+// Get Mongoose to use the global promise library
+mongoose.Promise = global.Promise;
+//Get the default connection
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  // we're connected!
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+var TodoModel = require('./models/todo');
+
+// Create an instance of model SomeModel
+var awesome_instance = new TodoModel({ name: 'awesome' });
+
+// Save the new model instance, passing a callback
+awesome_instance.save(function (err) {
+  if (err) return handleError(err);
+  // saved!
 });
-
-console.log(mongoose.connection.host);
-console.log(mongoose.connection.port);
-
-//var Todo = require('./models/todo');
 
 var bodyParser = require('body-parser');
 
