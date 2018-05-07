@@ -5,8 +5,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var TodoModelSchema = new Schema({
-    a_string: String,
-    a_date: Date
+    name: String
 });
 
 // Compile model from schema
