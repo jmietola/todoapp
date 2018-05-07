@@ -69,12 +69,19 @@ router.use(function(req, res, next) {
 
 router.route('/todos')
 
+    //TODO Get all todos from database
     .get(function(req, res) {
-    res.json({ message: ['Mongoose ORM', 'Move logic from server to separate files'] });
+    res.json({ message:  [
+        {
+      		"todo": "Mongoose ORM"
+      	}, {
+      		"todo": "Move logic from server to separate files"
+      	}
+      ] });
     })
 
 
-    // Create todo
+    //TODO Creating todo
     .post(function(req, res) {
     res.json({ message: 'Todo Created' });
   });
@@ -82,11 +89,13 @@ router.route('/todos')
 
 router.route('/todos/:id')
 
+    //TODO Updating todo
     .put((req, res) => {
       console.log(req.params.id);
       res.send({ });
     })
 
+    //TODO Delete todo
     .delete((req, res) => {
       console.log(req.params.id);
       res.send({ });
